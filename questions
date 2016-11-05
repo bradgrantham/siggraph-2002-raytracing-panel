@@ -1,0 +1,70 @@
+Needs work
+----------
+Games universally make use of rasterization FEATURE X.  How would
+  ray-tracing effectively support FEATURE X?  (define FEATURE X)
+
+Too general
+--------------
+If ray-tracing is breathing down rasterization's neck, what's breathing
+  down ray-tracing's neck?
+    Photon mapping
+    Metropolis algorithm
+What API will be used for interactive ray-tracing?
+What one feature in the GPU/CPU would give rasterization/ray-tracing the most 
+  advantage?
+
+Probably could work
+------------------
+Will ray-tracing replace OpenGL/Direct3D and when?
+Would a future ray-tracing API look more like Inventor (retained/abstract/
+  scene-based) or like OpenGL (immediate/direct/concrete)?
+    Philipp - OpenRT?
+    Kurt - Fahrenheit/OpenGL++?
+Do you think there's a place in the CPU for pixel shading technology,
+  in particular texture caching?
+    SSE + texture caching?
+    fb caching?
+    parallel operations on tiles of float[4]?
+One operation ray-tracing has been used for which rasterization has been
+  poor at implementing is volume rendering.
+    Do you anticipate next generation GPUs will support volume rendering
+      more effectively?  (fp framebuffer, mipmapped 3D texture)
+    Do you imagine there is a place for volume rendering in entertainment
+      titles?  (smoke, fog, ghosts, dust, clouds of vapor, fire)
+To NVIDIA, ATI:
+    Are your companies actively researching ray-tracing on GPU technology?
+Do you think GPUs will start supporting ray-tracing operations, and when, or
+  do you think we'll see lower-level fragment and vertex instructions better
+  support ray-tracing a la Purcell and Hanrahan's SIGGRAPH 2002 paper? 
+    triangle intersection vs dependent texture, dot product
+    voxel test vs dependent texture
+    looping via stencil vs multipass
+    multiple current fragment programs chosen by stencil value
+    random function vs linearly accessed texture containing random numbers
+    voxel intersection and fill for dynamic acceleration structure?
+When do you think we'll see jittered pixel subsampling a la Reality Engine
+  for improving rasterization quality?
+    (Is this ray-tracing specific?)
+How long will the triangle be the primary ray-tracing primitive?
+    What will be the successor?
+        subdiv surfaces?
+        volume splats?
+Do people really care about the quality of ray-tracing?
+    E.g. the quality of animation from Blue Sky
+    accurate shadows?
+    accurate reflections?
+    motion blur?
+    depth of field?
+Would Microsoft foster/draft a ray-tracing standard as a future part of DX?
+    or does this seem more like a shader-level library like Cg or
+      OpenGL Shader?
+      Larry, David - would ATI/NVIDIA propose such an API a la Cg?
+Purcell and Hanrahan's ray-tracer on GPU hardware uses a static preprocessed
+  structure for acceleration.  Do you anticipate a dynamic structure that
+  might be incorporated?
+How about the reverse question: When will rasterization replace ray-tracing?
+    Right now, special effects houses use customized high-quality batch
+      renderers with techniques from micropolygon techniques to ray-tracing.
+      Will rasterization take the lead in the short term and
+        replace ray-tracing for rendering?
+      Will a movie be made with OpenGL or Direct3D on a GPU, and when?
